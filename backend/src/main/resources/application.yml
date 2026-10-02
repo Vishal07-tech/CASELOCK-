@@ -7,7 +7,7 @@ spring:
     # used as-is. Set SPRING_PROFILES_ACTIVE=dev to switch to an in-memory
     # H2 database instead (see application-dev.yml), or =prod for the
     # production-hardened MySQL profile (see application-prod.yml).
-    active: ${SPRING_PROFILES_ACTIVE:}
+    active: ${SPRING_PROFILES_ACTIVE:dev}
 
   datasource:
     url: ${DB_URL:${MYSQL_URL:jdbc:mysql://${MYSQLHOST:localhost}:${MYSQLPORT:3306}/${MYSQLDATABASE:caselock_db}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}}
