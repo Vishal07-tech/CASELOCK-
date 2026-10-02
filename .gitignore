@@ -1,0 +1,20 @@
+# Root gitignore for CaseLock
+node_modules/
+dist/
+target/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+*.log
+logs/
+uploads/*
+!uploads/.gitkeep
+test-uploads/
+
+# Environment configs with secrets
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env

@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:caselock_test;DB_CLOSE_DELAY=-1;MODE=MySQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
+
+caselock:
+  seed:
+    enabled: false
+  jwt:
+    secret: test-only-secret-key-value-that-is-long-enough-for-hs256-signing-please
+    expiration-ms: 3600000
+    refresh-expiration-ms: 7200000
+  file-storage:
+    path: ./test-uploads

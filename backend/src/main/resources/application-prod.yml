@@ -1,0 +1,11 @@
+# Production profile: expects real MySQL and all secrets provided via
+# environment variables. Never commit real secrets for this profile.
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+caselock:
+  seed:
+    enabled: false

@@ -1,0 +1,11 @@
+package com.caselock.entity.enums;
+
+public enum NotificationType {
+    EVIDENCE_ASSIGNED,
+    EVIDENCE_TRANSFER_REQUESTED,
+    EVIDENCE_INTEGRITY_FAILED,
+    CASE_ASSIGNED,
+    CASE_STATUS_CHANGED,
+    UNAUTHORIZED_ACCESS_DETECTED,
+    GENERAL
+}
