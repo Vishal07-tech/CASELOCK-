@@ -38,7 +38,7 @@ spring:
       max-request-size: ${MAX_REQUEST_SIZE:55MB}
 
 server:
-  port: ${PORT:${SERVER_PORT:8080}}
+  port: ${PORT:8080}
   error:
     include-message: never
     include-stacktrace: never
