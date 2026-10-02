@@ -10,13 +10,9 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:}
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/caselock_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
-    username: ${DB_USERNAME:root}
-    # Defaulted to this project's own local MySQL password for convenience
-    # in this single-user local build. Override with the DB_PASSWORD
-    # environment variable (or edit this default) for any other setup -
-    # never commit a real production credential here.
-    password: ${DB_PASSWORD:Vishal07^}
+    url: ${DB_URL:${MYSQL_URL:jdbc:mysql://${MYSQLHOST:localhost}:${MYSQLPORT:3306}/${MYSQLDATABASE:caselock_db}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}}
+    username: ${DB_USERNAME:${MYSQLUSER:root}}
+    password: ${DB_PASSWORD:${MYSQLPASSWORD:Vishal07^}}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
@@ -58,7 +54,7 @@ caselock:
     allowed-extensions: jpg,jpeg,png,gif,bmp,tiff,mp4,mov,avi,mkv,mp3,wav,m4a,pdf,doc,docx,txt,csv,xls,xlsx,zip,rar,7z
     max-size-mb: ${MAX_FILE_SIZE_MB:50}
   cors:
-    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,https://caselock.vercel.app,https://*.vercel.app}
   security:
     max-failed-login-attempts: 5
     account-lockout-minutes: 15
